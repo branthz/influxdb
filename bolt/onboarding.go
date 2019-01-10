@@ -118,13 +118,12 @@ func (c *Client) Generate(ctx context.Context, req *platform.OnboardingRequest) 
 		return nil, err
 	}
 
-	perms := platform.OperPermissions()
-	perms = append(perms, platform.OrgAdminPermissions(o.ID)...)
-	writeBucketPerm, err := platform.NewPermissionAtID(bucket.ID, platform.WriteAction, platform.BucketsResource)
+	perms := platform.OperPermissions(o.ID)
+	writeBucketPerm, err := platform.NewPermissionAtID(bucket.ID, platform.WriteAction, platform.BucketsResource, bucket.OrganizationID)
 	if err != nil {
 		return nil, err
 	}
-	readBucketPerm, err := platform.NewPermissionAtID(bucket.ID, platform.ReadAction, platform.BucketsResource)
+	readBucketPerm, err := platform.NewPermissionAtID(bucket.ID, platform.ReadAction, platform.BucketsResource, bucket.OrganizationID)
 	if err != nil {
 		return nil, err
 	}

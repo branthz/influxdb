@@ -204,13 +204,12 @@ func Generate(
 }
 
 func mustGeneratePermissions(orgID, bucketID platform.ID) []platform.Permission {
-	perms := platform.OperPermissions()
-	perms = append(perms, platform.OrgAdminPermissions(orgID)...)
-	writeBucketPerm, err := platform.NewPermissionAtID(bucketID, platform.WriteAction, platform.BucketsResource)
+	perms := platform.OperPermissions(orgID)
+	writeBucketPerm, err := platform.NewPermissionAtID(bucketID, platform.WriteAction, platform.BucketsResource, orgID)
 	if err != nil {
 		panic(err)
 	}
-	readBucketPerm, err := platform.NewPermissionAtID(bucketID, platform.ReadAction, platform.BucketsResource)
+	readBucketPerm, err := platform.NewPermissionAtID(bucketID, platform.ReadAction, platform.BucketsResource, orgID)
 	if err != nil {
 		panic(err)
 	}
