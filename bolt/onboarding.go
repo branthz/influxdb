@@ -118,22 +118,11 @@ func (c *Client) Generate(ctx context.Context, req *platform.OnboardingRequest) 
 		return nil, err
 	}
 
-	perms := platform.OperPermissions(o.ID)
-	writeBucketPerm, err := platform.NewPermissionAtID(bucket.ID, platform.WriteAction, platform.BucketsResource, bucket.OrganizationID)
-	if err != nil {
-		return nil, err
-	}
-	readBucketPerm, err := platform.NewPermissionAtID(bucket.ID, platform.ReadAction, platform.BucketsResource, bucket.OrganizationID)
-	if err != nil {
-		return nil, err
-	}
-	perms = append(perms, *writeBucketPerm, *readBucketPerm)
-
 	auth := &platform.Authorization{
 		UserID:      u.ID,
 		Description: fmt.Sprintf("%s's Token", u.Name),
 		OrgID:       o.ID,
-		Permissions: perms,
+		Permissions: platform.OperPermissions(o.ID),
 	}
 	if err = c.CreateAuthorization(ctx, auth); err != nil {
 		return nil, err

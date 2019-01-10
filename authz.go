@@ -45,7 +45,7 @@ func PermissionAllowed(p Permission, ps []Permission) bool {
 				return true
 			}
 		} else {
-			if (*perm.ID).Valid() && *perm.ID == pID && perm.Action == p.Action && perm.Resource == p.Resource && perm.OrgID == p.OrgID {
+			if *perm.ID == pID && perm.Action == p.Action && perm.Resource == p.Resource && perm.OrgID == p.OrgID {
 				return true
 			}
 		}
