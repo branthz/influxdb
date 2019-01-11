@@ -31,6 +31,10 @@ type Authorizer interface {
 
 // PermissionAllowed determines if a permission is allowed.
 func PermissionAllowed(p Permission, ps []Permission) bool {
+	if !p.OrgID.Valid() {
+		return false
+	}
+
 	pID := ID(0)
 	if p.ID != nil {
 		pID = *p.ID
