@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/influxdata/influxdb/query"
+	"github.com/branthz/influxdb/query"
 	"github.com/influxdata/influxql"
 )
 

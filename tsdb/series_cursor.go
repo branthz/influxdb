@@ -6,7 +6,7 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/influxdata/influxdb/models"
+	"github.com/branthz/influxdb/models"
 	"github.com/influxdata/influxql"
 )
 

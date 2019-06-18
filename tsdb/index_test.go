@@ -10,14 +10,14 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/influxdata/influxdb/internal"
-	"github.com/influxdata/influxdb/logger"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/pkg/slices"
-	"github.com/influxdata/influxdb/query"
-	"github.com/influxdata/influxdb/tsdb"
-	"github.com/influxdata/influxdb/tsdb/index/inmem"
-	"github.com/influxdata/influxdb/tsdb/index/tsi1"
+	"github.com/branthz/influxdb/internal"
+	"github.com/branthz/influxdb/logger"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/pkg/slices"
+	"github.com/branthz/influxdb/query"
+	"github.com/branthz/influxdb/tsdb"
+	"github.com/branthz/influxdb/tsdb/index/inmem"
+	"github.com/branthz/influxdb/tsdb/index/tsi1"
 	"github.com/influxdata/influxql"
 )
 

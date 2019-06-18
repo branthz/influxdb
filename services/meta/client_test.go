@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb"
+	"github.com/branthz/influxdb"
 
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/branthz/influxdb/services/meta"
 	"github.com/influxdata/influxql"
 )
 

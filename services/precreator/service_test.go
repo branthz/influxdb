@@ -5,10 +5,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb/internal"
-	"github.com/influxdata/influxdb/logger"
-	"github.com/influxdata/influxdb/services/precreator"
-	"github.com/influxdata/influxdb/toml"
+	"github.com/branthz/influxdb/internal"
+	"github.com/branthz/influxdb/logger"
+	"github.com/branthz/influxdb/services/precreator"
+	"github.com/branthz/influxdb/toml"
 )
 
 func TestShardPrecreation(t *testing.T) {

@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/influxdata/influxdb/pkg/tracing"
-	"github.com/influxdata/influxdb/query/internal/gota"
+	"github.com/branthz/influxdb/pkg/tracing"
+	"github.com/branthz/influxdb/query/internal/gota"
 	"github.com/influxdata/influxql"
 )
 

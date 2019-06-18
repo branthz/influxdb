@@ -9,8 +9,8 @@ import (
 	"testing/quick"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/influxdata/influxdb/internal/testutil"
-	"github.com/influxdata/influxdb/uuid"
+	"github.com/branthz/influxdb/internal/testutil"
+	"github.com/branthz/influxdb/uuid"
 )
 
 func TestStringArrayEncodeAll_NoValues(t *testing.T) {

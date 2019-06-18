@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/gogo/protobuf/types"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/prometheus/remote"
-	"github.com/influxdata/influxdb/services/storage"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/prometheus/remote"
+	"github.com/branthz/influxdb/services/storage"
 	"github.com/influxdata/platform/storage/reads/datatypes"
 )
 

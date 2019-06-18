@@ -4,7 +4,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/influxdata/influxdb/monitor/diagnostics"
+	"github.com/branthz/influxdb/monitor/diagnostics"
 )
 
 const (

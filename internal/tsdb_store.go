@@ -4,9 +4,9 @@ import (
 	"io"
 	"time"
 
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/query"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/query"
+	"github.com/branthz/influxdb/tsdb"
 	"github.com/influxdata/influxql"
 	"go.uber.org/zap"
 )

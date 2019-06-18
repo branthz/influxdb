@@ -36,7 +36,7 @@ pipeline {
           sh """
           set -e
           if ! git diff --quiet; then
-            git config remote.origin.pushurl git@github.com:influxdata/influxdb.git
+            git config remote.origin.pushurl git@github.com:branthz/influxdb.git
             git commit -am 'Update changelog'
             git push origin HEAD:${BRANCH_NAME}
           fi
@@ -55,15 +55,15 @@ pipeline {
       steps {
         sh """
         mkdir -p /go/src/github.com/influxdata
-        cp -a $WORKSPACE /go/src/github.com/influxdata/influxdb
+        cp -a $WORKSPACE /go/src/github.com/branthz/influxdb
 
-        cd /go/src/github.com/influxdata/influxdb
+        cd /go/src/github.com/branthz/influxdb
         go get github.com/golang/dep/cmd/dep
         dep ensure -vendor-only
         """
 
         sh """
-        cd /go/src/github.com/influxdata/influxdb
+        cd /go/src/github.com/branthz/influxdb
         go test -parallel=1 ./...
         """
       }
@@ -79,15 +79,15 @@ pipeline {
       steps {
         sh """
         mkdir -p /go/src/github.com/influxdata
-        cp -a $WORKSPACE /go/src/github.com/influxdata/influxdb
+        cp -a $WORKSPACE /go/src/github.com/branthz/influxdb
 
-        cd /go/src/github.com/influxdata/influxdb
+        cd /go/src/github.com/branthz/influxdb
         go get github.com/golang/dep/cmd/dep
         dep ensure -vendor-only
         """
 
         sh """
-        cd /go/src/github.com/influxdata/influxdb
+        cd /go/src/github.com/branthz/influxdb
         go test -parallel=1 ./...
         """
       }

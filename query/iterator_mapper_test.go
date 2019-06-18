@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/influxdata/influxdb/pkg/deep"
-	"github.com/influxdata/influxdb/query"
+	"github.com/branthz/influxdb/pkg/deep"
+	"github.com/branthz/influxdb/query"
 	"github.com/influxdata/influxql"
 )
 

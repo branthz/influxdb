@@ -17,18 +17,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb/internal"
+	"github.com/branthz/influxdb/internal"
 
 	"github.com/davecgh/go-spew/spew"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/pkg/deep"
-	"github.com/influxdata/influxdb/query"
-	"github.com/influxdata/influxdb/tsdb"
-	_ "github.com/influxdata/influxdb/tsdb/engine"
-	_ "github.com/influxdata/influxdb/tsdb/index"
-	"github.com/influxdata/influxdb/tsdb/index/inmem"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/pkg/deep"
+	"github.com/branthz/influxdb/query"
+	"github.com/branthz/influxdb/tsdb"
+	_ "github.com/branthz/influxdb/tsdb/engine"
+	_ "github.com/branthz/influxdb/tsdb/index"
+	"github.com/branthz/influxdb/tsdb/index/inmem"
 	"github.com/influxdata/influxql"
 )
 

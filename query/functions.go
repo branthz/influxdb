@@ -6,8 +6,8 @@ import (
 	"sort"
 	"time"
 
-	"github.com/influxdata/influxdb/query/internal/gota"
-	"github.com/influxdata/influxdb/query/neldermead"
+	"github.com/branthz/influxdb/query/internal/gota"
+	"github.com/branthz/influxdb/query/neldermead"
 	"github.com/influxdata/influxql"
 )
 

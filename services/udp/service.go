@@ -1,5 +1,5 @@
 // Package udp provides the UDP input service for InfluxDB.
-package udp // import "github.com/influxdata/influxdb/services/udp"
+package udp // import "github.com/branthz/influxdb/services/udp"
 
 import (
 	"errors"
@@ -8,10 +8,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/influxdata/influxdb/logger"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/branthz/influxdb/logger"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/services/meta"
+	"github.com/branthz/influxdb/tsdb"
 	"go.uber.org/zap"
 )
 

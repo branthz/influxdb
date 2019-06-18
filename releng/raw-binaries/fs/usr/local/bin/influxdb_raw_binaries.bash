@@ -33,7 +33,7 @@ fi
 # Extract tarball into GOPATH.
 tar xz -C "$GOPATH" -f /influxdb-src.tar.gz
 
-SHA=$(jq -r .sha < "$GOPATH/src/github.com/influxdata/influxdb/.metadata.json")
+SHA=$(jq -r .sha < "$GOPATH/src/github.com/branthz/influxdb/.metadata.json")
 
 
 SUFFIX=

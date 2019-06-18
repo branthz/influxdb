@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/influxdata/influxdb/monitor/diagnostics"
-	"github.com/influxdata/influxdb/toml"
+	"github.com/branthz/influxdb/monitor/diagnostics"
+	"github.com/branthz/influxdb/toml"
 )
 
 const (

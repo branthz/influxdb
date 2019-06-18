@@ -8,11 +8,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb/internal"
-	"github.com/influxdata/influxdb/logger"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/services/retention"
-	"github.com/influxdata/influxdb/toml"
+	"github.com/branthz/influxdb/internal"
+	"github.com/branthz/influxdb/logger"
+	"github.com/branthz/influxdb/services/meta"
+	"github.com/branthz/influxdb/services/retention"
+	"github.com/branthz/influxdb/toml"
 )
 
 func TestService_OpenDisabled(t *testing.T) {
@@ -206,7 +206,7 @@ func TestService_CheckShards(t *testing.T) {
 	}
 }
 
-// This reproduces https://github.com/influxdata/influxdb/issues/8819
+// This reproduces https://github.com/branthz/influxdb/issues/8819
 func TestService_8819_repro(t *testing.T) {
 	for i := 0; i < 1000; i++ {
 		s, errC, done := testService_8819_repro(t)

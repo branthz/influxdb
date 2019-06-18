@@ -8,11 +8,11 @@ import (
 	"sync"
 	"unsafe"
 
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/pkg/bytesutil"
-	"github.com/influxdata/influxdb/pkg/radix"
-	"github.com/influxdata/influxdb/query"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/pkg/bytesutil"
+	"github.com/branthz/influxdb/pkg/radix"
+	"github.com/branthz/influxdb/query"
+	"github.com/branthz/influxdb/tsdb"
 	"github.com/influxdata/influxql"
 )
 

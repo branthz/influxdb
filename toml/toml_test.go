@@ -13,8 +13,8 @@ import (
 
 	"github.com/BurntSushi/toml"
 	"github.com/google/go-cmp/cmp"
-	"github.com/influxdata/influxdb/cmd/influxd/run"
-	itoml "github.com/influxdata/influxdb/toml"
+	"github.com/branthz/influxdb/cmd/influxd/run"
+	itoml "github.com/branthz/influxdb/toml"
 )
 
 func TestSize_UnmarshalText(t *testing.T) {

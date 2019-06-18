@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/influxdata/influxdb/models"
+	"github.com/branthz/influxdb/models"
 	"github.com/influxdata/influxql"
 )
 

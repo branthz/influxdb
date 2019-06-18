@@ -6,8 +6,8 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/tsdb"
 )
 
 // Ensure fileset can return an iterator over all series in the index.

@@ -5,9 +5,9 @@ import (
 	"errors"
 	"sort"
 
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/query"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/query"
+	"github.com/branthz/influxdb/tsdb"
 	"github.com/influxdata/influxql"
 	"github.com/influxdata/platform/storage/reads"
 	"github.com/influxdata/platform/storage/reads/datatypes"

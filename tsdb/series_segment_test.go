@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/branthz/influxdb/tsdb"
 )
 
 func TestSeriesSegment(t *testing.T) {

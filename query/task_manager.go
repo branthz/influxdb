@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/influxdb/models"
+	"github.com/branthz/influxdb/models"
 	"github.com/influxdata/influxql"
 	"go.uber.org/zap"
 )

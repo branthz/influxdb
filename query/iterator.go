@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/influxdata/influxdb/pkg/tracing"
-	internal "github.com/influxdata/influxdb/query/internal"
+	"github.com/branthz/influxdb/pkg/tracing"
+	internal "github.com/branthz/influxdb/query/internal"
 	"github.com/influxdata/influxql"
 )
 

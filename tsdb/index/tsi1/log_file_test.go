@@ -14,12 +14,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb/pkg/slices"
+	"github.com/branthz/influxdb/pkg/slices"
 
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/pkg/bloom"
-	"github.com/influxdata/influxdb/tsdb"
-	"github.com/influxdata/influxdb/tsdb/index/tsi1"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/pkg/bloom"
+	"github.com/branthz/influxdb/tsdb"
+	"github.com/branthz/influxdb/tsdb/index/tsi1"
 )
 
 // Ensure log file can append series.

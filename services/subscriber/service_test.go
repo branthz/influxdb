@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb/coordinator"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/services/subscriber"
+	"github.com/branthz/influxdb/coordinator"
+	"github.com/branthz/influxdb/services/meta"
+	"github.com/branthz/influxdb/services/subscriber"
 )
 
 const testTimeout = 10 * time.Second

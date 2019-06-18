@@ -3,7 +3,7 @@ package tsdb
 import (
 	"context"
 
-	"github.com/influxdata/influxdb/query"
+	"github.com/branthz/influxdb/query"
 	"github.com/influxdata/platform/tsdb/cursors"
 )
 

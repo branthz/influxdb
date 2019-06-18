@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/branthz/influxdb/tsdb"
 )
 
 func TestTagValueSeriesIDCache(t *testing.T) {

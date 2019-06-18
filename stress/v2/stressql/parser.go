@@ -8,8 +8,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/influxdata/influxdb/stress/v2/statement"
-	stressql "github.com/influxdata/influxdb/stress/v2/stressql/statement"
+	"github.com/branthz/influxdb/stress/v2/statement"
+	stressql "github.com/branthz/influxdb/stress/v2/stressql/statement"
 	"github.com/influxdata/influxql"
 )
 

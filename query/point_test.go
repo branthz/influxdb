@@ -6,8 +6,8 @@ import (
 	"testing"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/influxdata/influxdb/pkg/deep"
-	"github.com/influxdata/influxdb/query"
+	"github.com/branthz/influxdb/pkg/deep"
+	"github.com/branthz/influxdb/query"
 )
 
 func TestPoint_Clone_Float(t *testing.T) {

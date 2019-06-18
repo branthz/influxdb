@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb/logger"
-	"github.com/influxdata/influxdb/query"
+	"github.com/branthz/influxdb/logger"
+	"github.com/branthz/influxdb/query"
 	"github.com/influxdata/influxql"
 )
 

@@ -14,8 +14,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/tcp"
+	"github.com/branthz/influxdb/services/meta"
+	"github.com/branthz/influxdb/tcp"
 )
 
 // Client provides an API for the snapshotter service.

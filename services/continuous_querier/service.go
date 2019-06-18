@@ -1,5 +1,5 @@
 // Package continuous_querier provides the continuous query service.
-package continuous_querier // import "github.com/influxdata/influxdb/services/continuous_querier"
+package continuous_querier // import "github.com/branthz/influxdb/services/continuous_querier"
 
 import (
 	"errors"
@@ -9,10 +9,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/influxdata/influxdb/logger"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/query"
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/branthz/influxdb/logger"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/query"
+	"github.com/branthz/influxdb/services/meta"
 	"github.com/influxdata/influxql"
 	"go.uber.org/zap"
 )
