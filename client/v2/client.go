@@ -1,5 +1,5 @@
 // Package client (v2) is the current official Go client for InfluxDB.
-package client // import "github.com/influxdata/influxdb/client/v2"
+package client // import "github.com/branthz/influxdb/client/v2"
 
 import (
 	"bytes"
@@ -19,7 +19,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/influxdata/influxdb/models"
+	"github.com/branthz/influxdb/models"
+)
+
+var (
+	defaultRp = "1w"
 )
 
 // HTTPConfig is the config data needed to create an HTTP Client.
@@ -36,6 +40,7 @@ type HTTPConfig struct {
 
 	// UserAgent is the http User Agent, defaults to "InfluxDBClient".
 	UserAgent string
+	DB        string
 
 	// Timeout for influxdb writes, defaults to no timeout.
 	Timeout time.Duration
@@ -83,6 +88,7 @@ type Client interface {
 	// Query makes an InfluxDB Query on the database. This will fail if using
 	// the UDP client.
 	Query(q Query) (*Response, error)
+	Rawquery(q string) (*Response, error)
 
 	// QueryAsChunk makes an InfluxDB Query on the database. This will fail if using
 	// the UDP client.
@@ -94,7 +100,7 @@ type Client interface {
 
 // NewHTTPClient returns a new Client from the provided config.
 // Client is safe for concurrent use by multiple goroutines.
-func NewHTTPClient(conf HTTPConfig) (Client, error) {
+func NewHTTPClient(conf HTTPConfig) (*client, error) {
 	if conf.UserAgent == "" {
 		conf.UserAgent = "InfluxDBClient"
 	}
@@ -120,6 +126,7 @@ func NewHTTPClient(conf HTTPConfig) (Client, error) {
 	}
 	return &client{
 		url:       *u,
+		db:        conf.DB,
 		username:  conf.Username,
 		password:  conf.Password,
 		useragent: conf.UserAgent,
@@ -188,6 +195,7 @@ type client struct {
 	// N.B - if url.UserInfo is accessed in future modifications to the
 	// methods on client, you will need to synchronize access to url.
 	url        url.URL
+	db         string
 	username   string
 	password   string
 	useragent  string
@@ -201,6 +209,7 @@ type client struct {
 type BatchPoints interface {
 	// AddPoint adds the given point to the Batch of points.
 	AddPoint(p *Point)
+	ResetPoint()
 	// AddPoints adds the given points to the Batch of points.
 	AddPoints(ps []*Point)
 	// Points lists the points in the Batch.
@@ -254,6 +263,9 @@ type batchpoints struct {
 
 func (bp *batchpoints) AddPoint(p *Point) {
 	bp.points = append(bp.points, p)
+}
+func (bp *batchpoints) ResetPoint() {
+	bp.points = bp.points[0:0]
 }
 
 func (bp *batchpoints) AddPoints(ps []*Point) {
@@ -505,6 +517,75 @@ type Result struct {
 	Err      string `json:"error,omitempty"`
 }
 
+func (c *client) Rawquery(q string) (*Result, error) {
+	req, err := c.createRawRequest(q)
+	if err != nil {
+		return nil, err
+	}
+	//params := req.URL.Query()
+	//if q.Chunked {
+	//	params.Set("chunked", "true")
+	//	if q.ChunkSize > 0 {
+	//		params.Set("chunk_size", strconv.Itoa(q.ChunkSize))
+	//	}
+	//	req.URL.RawQuery = params.Encode()
+	//}
+	resp, err := c.httpClient.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	if err := checkResponse(resp); err != nil {
+		return nil, err
+	}
+
+	var response Response
+	//if q.Chunked {
+	//	cr := NewChunkedResponse(resp.Body)
+	//	for {
+	//		r, err := cr.NextResponse()
+	//		if err != nil {
+	//			if err == io.EOF {
+	//				break
+	//			}
+	//			// If we got an error while decoding the response, send that back.
+	//			return nil, err
+	//		}
+
+	//		if r == nil {
+	//			break
+	//		}
+
+	//		response.Results = append(response.Results, r.Results...)
+	//		if r.Err != "" {
+	//			response.Err = r.Err
+	//			break
+	//		}
+	//	}
+	//} else {
+	dec := json.NewDecoder(resp.Body)
+	dec.UseNumber()
+	decErr := dec.Decode(&response)
+
+	// ignore this error if we got an invalid status code
+	if decErr != nil && decErr.Error() == "EOF" && resp.StatusCode != http.StatusOK {
+		decErr = nil
+	}
+	// If we got a valid decode error, send that back
+	if decErr != nil {
+		return nil, fmt.Errorf("unable to decode json: received status code %d err: %s", resp.StatusCode, decErr)
+	}
+	//}
+
+	// If we don't have an error in our json response, and didn't get statusOK
+	// then send back an error
+	if resp.StatusCode != http.StatusOK && response.Error() == nil {
+		return nil, fmt.Errorf("received status code %d from server", resp.StatusCode)
+	}
+	return &response.Results[0], nil
+}
+
 // Query sends a command to the server and returns the Response.
 func (c *client) Query(q Query) (*Response, error) {
 	req, err := c.createDefaultRequest(q)
@@ -626,6 +707,44 @@ func checkResponse(resp *http.Response) error {
 	return nil
 }
 
+func (c *client) createRawRequest(q string) (*http.Request, error) {
+	u := c.url
+	u.Path = path.Join(u.Path, "query")
+
+	//jsonParameters, err := json.Marshal(q.Parameters)
+	//if err != nil {
+	//	return nil, err
+	//}
+
+	req, err := http.NewRequest("POST", u.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Set("Content-Type", "")
+	req.Header.Set("User-Agent", c.useragent)
+
+	if c.username != "" {
+		req.SetBasicAuth(c.username, c.password)
+	}
+
+	params := req.URL.Query()
+	params.Set("q", q)
+	params.Set("db", c.db)
+	//if q.RetentionPolicy != "" {
+	//	params.Set("rp", q.RetentionPolicy)
+	//}
+	params.Set("params", "")
+
+	//if q.Precision != "" {
+	params.Set("epoch", "s")
+	//}
+	req.URL.RawQuery = params.Encode()
+
+	return req, nil
+
+}
+
 func (c *client) createDefaultRequest(q Query) (*http.Request, error) {
 	u := c.url
 	u.Path = path.Join(u.Path, "query")
@@ -649,7 +768,7 @@ func (c *client) createDefaultRequest(q Query) (*http.Request, error) {
 
 	params := req.URL.Query()
 	params.Set("q", q.Command)
-	params.Set("db", q.Database)
+	params.Set("db", c.db)
 	if q.RetentionPolicy != "" {
 		params.Set("rp", q.RetentionPolicy)
 	}

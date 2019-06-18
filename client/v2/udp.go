@@ -103,6 +103,9 @@ func (uc *udpclient) Write(bp BatchPoints) error {
 	return delayedError
 }
 
+func (uc *udpclient) Rawquery(q string) (*Response, error) {
+	return nil, fmt.Errorf("Querying via UDP is not supported")
+}
 func (uc *udpclient) Query(q Query) (*Response, error) {
 	return nil, fmt.Errorf("Querying via UDP is not supported")
 }
