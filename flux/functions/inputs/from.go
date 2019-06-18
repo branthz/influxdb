@@ -6,7 +6,7 @@ import (
 	"github.com/influxdata/flux/execute"
 	"github.com/influxdata/flux/functions/inputs"
 	"github.com/influxdata/flux/plan"
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/branthz/influxdb/services/meta"
 	"github.com/influxdata/influxql"
 	"github.com/influxdata/platform/query/functions/inputs/storage"
 	"github.com/pkg/errors"

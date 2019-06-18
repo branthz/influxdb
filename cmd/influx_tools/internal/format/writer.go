@@ -3,9 +3,9 @@ package format
 import (
 	"fmt"
 
-	"github.com/influxdata/influxdb/cmd/influx_tools/internal/storage"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/branthz/influxdb/cmd/influx_tools/internal/storage"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/tsdb"
 	"github.com/influxdata/influxql"
 )
 

@@ -14,12 +14,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/influxdata/influxdb/cmd/influx_tools/internal/errlist"
-	"github.com/influxdata/influxdb/cmd/influx_tools/internal/format/binary"
-	"github.com/influxdata/influxdb/cmd/influx_tools/internal/format/line"
-	"github.com/influxdata/influxdb/logger"
-	"github.com/influxdata/influxdb/pkg/limiter"
-	"github.com/influxdata/influxdb/tsdb/engine/tsm1"
+	"github.com/branthz/influxdb/cmd/influx_tools/internal/errlist"
+	"github.com/branthz/influxdb/cmd/influx_tools/internal/format/binary"
+	"github.com/branthz/influxdb/cmd/influx_tools/internal/format/line"
+	"github.com/branthz/influxdb/logger"
+	"github.com/branthz/influxdb/pkg/limiter"
+	"github.com/branthz/influxdb/tsdb/engine/tsm1"
 	"go.uber.org/zap"
 )
 

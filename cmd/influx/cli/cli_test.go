@@ -13,8 +13,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/influxdata/influxdb/client"
-	"github.com/influxdata/influxdb/cmd/influx/cli"
+	"github.com/branthz/influxdb/client"
+	"github.com/branthz/influxdb/cmd/influx/cli"
 	"github.com/influxdata/influxql"
 	"github.com/peterh/liner"
 )

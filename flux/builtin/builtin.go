@@ -10,7 +10,7 @@ import (
 	_ "github.com/influxdata/flux/functions/outputs"         // Import the built-in output functions
 	_ "github.com/influxdata/flux/functions/transformations" // Import the built-in transformations
 	_ "github.com/influxdata/flux/options"                   // Import the built-in options
-	_ "github.com/influxdata/influxdb/flux/functions/inputs" // Import the built-in functions
+	_ "github.com/branthz/influxdb/flux/functions/inputs" // Import the built-in functions
 )
 
 func init() {

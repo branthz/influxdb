@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/influxdata/influxdb/cmd/influx_tools/internal/errlist"
-	"github.com/influxdata/influxdb/tsdb/engine/tsm1"
+	"github.com/branthz/influxdb/cmd/influx_tools/internal/errlist"
+	"github.com/branthz/influxdb/tsdb/engine/tsm1"
 	"github.com/influxdata/platform/pkg/data/gen"
 )
 

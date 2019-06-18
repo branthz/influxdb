@@ -10,10 +10,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/influxdata/influxdb/cmd/influx_tools/generate"
-	"github.com/influxdata/influxdb/cmd/influx_tools/internal/profile"
-	"github.com/influxdata/influxdb/cmd/influx_tools/server"
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/branthz/influxdb/cmd/influx_tools/generate"
+	"github.com/branthz/influxdb/cmd/influx_tools/internal/profile"
+	"github.com/branthz/influxdb/cmd/influx_tools/server"
+	"github.com/branthz/influxdb/services/meta"
 	"github.com/influxdata/platform/pkg/data/gen"
 )
 

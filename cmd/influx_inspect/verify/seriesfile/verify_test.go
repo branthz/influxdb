@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb/cmd/influx_inspect/verify/seriesfile"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/branthz/influxdb/cmd/influx_inspect/verify/seriesfile"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/tsdb"
 	"go.uber.org/zap"
 )
 

@@ -9,7 +9,7 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/branthz/influxdb/tsdb"
 	"go.uber.org/zap"
 )
 

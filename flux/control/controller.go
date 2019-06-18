@@ -3,8 +3,8 @@ package control
 import (
 	"github.com/influxdata/flux/control"
 	"github.com/influxdata/flux/execute"
-	_ "github.com/influxdata/influxdb/flux/builtin"
-	"github.com/influxdata/influxdb/flux/functions/inputs"
+	_ "github.com/branthz/influxdb/flux/builtin"
+	"github.com/branthz/influxdb/flux/functions/inputs"
 	fstorage "github.com/influxdata/platform/query/functions/inputs/storage"
 	"go.uber.org/zap"
 )

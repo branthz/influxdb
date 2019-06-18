@@ -9,7 +9,7 @@ import (
 	"github.com/influxdata/flux/memory"
 	"github.com/influxdata/flux/plan"
 	"github.com/influxdata/flux/values"
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/branthz/influxdb/services/meta"
 	"github.com/influxdata/influxql"
 	"github.com/pkg/errors"
 )

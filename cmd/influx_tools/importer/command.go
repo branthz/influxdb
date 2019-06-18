@@ -7,12 +7,12 @@ import (
 	"os"
 	"time"
 
-	"github.com/influxdata/influxdb/cmd/influx_tools/internal/errlist"
+	"github.com/branthz/influxdb/cmd/influx_tools/internal/errlist"
 
-	"github.com/influxdata/influxdb/cmd/influx_tools/internal/format/binary"
-	"github.com/influxdata/influxdb/cmd/influx_tools/server"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/tsdb/engine/tsm1"
+	"github.com/branthz/influxdb/cmd/influx_tools/internal/format/binary"
+	"github.com/branthz/influxdb/cmd/influx_tools/server"
+	"github.com/branthz/influxdb/services/meta"
+	"github.com/branthz/influxdb/tsdb/engine/tsm1"
 	"go.uber.org/zap"
 )
 

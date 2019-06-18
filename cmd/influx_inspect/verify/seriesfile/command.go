@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/influxdata/influxdb/logger"
+	"github.com/branthz/influxdb/logger"
 	"go.uber.org/zap/zapcore"
 )
 

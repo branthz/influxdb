@@ -8,8 +8,8 @@ import (
 	"os"
 	"runtime/pprof"
 
-	"github.com/influxdata/influxdb/stress"
-	v2 "github.com/influxdata/influxdb/stress/v2"
+	"github.com/branthz/influxdb/stress"
+	v2 "github.com/branthz/influxdb/stress/v2"
 )
 
 var (

@@ -14,8 +14,8 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/tsdb/engine/tsm1"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/tsdb/engine/tsm1"
 	"github.com/retailnext/hllpp"
 )
 

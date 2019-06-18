@@ -16,7 +16,7 @@ import (
 	"github.com/influxdata/flux"
 	"github.com/influxdata/flux/csv"
 	"github.com/influxdata/flux/lang"
-	iclient "github.com/influxdata/influxdb/client"
+	iclient "github.com/branthz/influxdb/client"
 	"github.com/pkg/errors"
 )
 

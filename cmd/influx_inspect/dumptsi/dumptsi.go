@@ -11,10 +11,10 @@ import (
 	"regexp"
 	"text/tabwriter"
 
-	"github.com/influxdata/influxdb/logger"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/tsdb"
-	"github.com/influxdata/influxdb/tsdb/index/tsi1"
+	"github.com/branthz/influxdb/logger"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/tsdb"
+	"github.com/branthz/influxdb/tsdb/index/tsi1"
 )
 
 // Command represents the program execution for "influxd dumptsi".

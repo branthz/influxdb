@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/influxdata/influxdb/cmd/influx_tools/server"
+	"github.com/branthz/influxdb/cmd/influx_tools/server"
 )
 
 type TagCardinalities []int

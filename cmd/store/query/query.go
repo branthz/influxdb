@@ -14,8 +14,8 @@ import (
 	"time"
 
 	"github.com/gogo/protobuf/types"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/services/storage"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/services/storage"
 	"github.com/influxdata/influxql"
 	"github.com/influxdata/platform/storage/reads/datatypes"
 	"go.uber.org/zap"

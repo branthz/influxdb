@@ -10,9 +10,9 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/influxdata/influxdb/cmd/influx_tools/internal/errlist"
-	"github.com/influxdata/influxdb/cmd/influx_tools/server"
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/branthz/influxdb/cmd/influx_tools/internal/errlist"
+	"github.com/branthz/influxdb/cmd/influx_tools/server"
+	"github.com/branthz/influxdb/services/meta"
 	"github.com/pkg/errors"
 )
 

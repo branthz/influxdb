@@ -8,12 +8,12 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/influxdata/influxdb/cmd/influx_tools/internal/errlist"
-	"github.com/influxdata/influxdb/cmd/influx_tools/internal/shard"
-	"github.com/influxdata/influxdb/cmd/influx_tools/server"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/tsdb"
-	"github.com/influxdata/influxdb/tsdb/engine/tsm1"
+	"github.com/branthz/influxdb/cmd/influx_tools/internal/errlist"
+	"github.com/branthz/influxdb/cmd/influx_tools/internal/shard"
+	"github.com/branthz/influxdb/cmd/influx_tools/server"
+	"github.com/branthz/influxdb/services/meta"
+	"github.com/branthz/influxdb/tsdb"
+	"github.com/branthz/influxdb/tsdb/engine/tsm1"
 	"go.uber.org/zap"
 )
 

@@ -13,13 +13,13 @@ import (
 	"time"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/influxdata/influxdb/coordinator"
-	"github.com/influxdata/influxdb/internal"
-	"github.com/influxdata/influxdb/logger"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/query"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/branthz/influxdb/coordinator"
+	"github.com/branthz/influxdb/internal"
+	"github.com/branthz/influxdb/logger"
+	"github.com/branthz/influxdb/models"
+	"github.com/branthz/influxdb/query"
+	"github.com/branthz/influxdb/services/meta"
+	"github.com/branthz/influxdb/tsdb"
 	"github.com/influxdata/influxql"
 )
 

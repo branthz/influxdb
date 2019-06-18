@@ -3,7 +3,7 @@ package coordinator_test
 import (
 	"time"
 
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/branthz/influxdb/services/meta"
 	"github.com/influxdata/influxql"
 )
 

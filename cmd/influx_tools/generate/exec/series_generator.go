@@ -1,7 +1,7 @@
 package exec
 
 import (
-	"github.com/influxdata/influxdb/models"
+	"github.com/branthz/influxdb/models"
 	"github.com/influxdata/platform/pkg/data/gen"
 )
 
